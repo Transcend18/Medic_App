@@ -10,8 +10,9 @@ import { Button } from 'react-native-paper';
 import { Theme } from '../components/Theme';
 
 export function Intro({navigation}){
-    const [appIsReady, setAppIsReady] = useState(false);
 
+    {/* This is used to load developer preferred font instead of system font */}
+    const [appIsReady, setAppIsReady] = useState(false);
     useEffect(() => {
         async function prepare() {
             try {
@@ -51,11 +52,13 @@ export function Intro({navigation}){
                     <Button mode='contained' 
                     color={Theme.colors.text.tertiary} 
                     style={{paddingVertical:Theme.sizes[3],marginBottom:Theme.sizes[3]}}
+                    onPress={()=> navigation.navigate('Signup')}
                     >Sign up</Button>
 
                     <Button mode='outlined' 
                     color={Theme.colors.text.tertiary}
                     style={{paddingVertical:Theme.sizes[3]}}
+                    onPress= {() => navigation.navigate('Login')}
                     >Sign in</Button>
                 </View>
             </View>
